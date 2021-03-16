@@ -49,7 +49,7 @@ public class Aluguel implements Serializable {
     private Calendar dataFimContrato;
 
     @Column(name = "dia_vencimento", nullable = false)
-    private int diaVencimento;
+    private Integer diaVencimento;
 
     @NotNull(message = "A unidade condominial deve ser informada")
     @ManyToOne
@@ -101,11 +101,11 @@ public class Aluguel implements Serializable {
         this.dataFimContrato = dataFimContrato;
     }
 
-    public int getDiaVencimento() {
+    public Integer getDiaVencimento() {
         return diaVencimento;
     }
 
-    public void setDiaVencimento(int diaVencimento) {
+    public void setDiaVencimento(Integer diaVencimento) {
         this.diaVencimento = diaVencimento;
     }
 

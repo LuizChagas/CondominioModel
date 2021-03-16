@@ -20,10 +20,10 @@ public class Locatario extends Pessoa implements Serializable{
     @Column(name = "renda", nullable = false)
     private double renda;
     
-    @Column(name = "local_trabalho", nullable = false)
+    @Column(name = "local_trabalho")
     private String localTrabalho;
     
-    @Column(name = "telefone_trabalho", nullable = false)
+    @Column(name = "telefone_trabalho")
     private String telefoneTrabalho;
     
     public Locatario() {

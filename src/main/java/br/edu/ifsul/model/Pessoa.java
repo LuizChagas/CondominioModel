@@ -15,6 +15,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
 
 /**
  *
@@ -30,16 +33,23 @@ public class Pessoa implements Serializable {
     @GeneratedValue(generator = "seq_pessoa", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "nome", nullable = false)
+    @NotBlank(message = "O nome não pode ser em branco")
+    @Length(max = 50, message = "O nome não pode ter mais que {max} caracteres")
+    @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
-    @Column(name = "cpf", nullable = false)
+    @CPF(message = "O Cpf deve ser válido")
+    @NotBlank(message = "O Cpf não pode ser em branco")
+    @Length(max = 14, message = "O Cpf não pode ter mais que {max} caracteres")
+    @Column(name = "cpf", nullable = false, length = 14)
     private String cpf;
 
-    @Column(name = "telefone", nullable = false)
+    @Length(max = 12, message = "O telefone não pode ter mais que {max} caracteres")
+    @Column(name = "telefone", length = 12)
     private String telefone;
 
-    @Column(name = "email", nullable = false)
+    @Length(max = 50, message = "O email não pode ter mais que {max} caracteres")
+    @Column(name = "email", length = 50)
     private String email;
 
     public Pessoa() {

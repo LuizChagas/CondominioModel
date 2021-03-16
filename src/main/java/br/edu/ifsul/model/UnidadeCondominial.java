@@ -40,7 +40,7 @@ public class UnidadeCondominial implements Serializable {
     private Double area;
 
     @Column(name = "numero_quarto", nullable = false)
-    private int numeroQuarto;
+    private Integer numeroQuarto;
 
     @NotNull(message = "A pessoa deve ser informada")
     @ManyToOne
@@ -88,11 +88,11 @@ public class UnidadeCondominial implements Serializable {
         this.area = area;
     }
 
-    public int getNumeroQuarto() {
+    public Integer getNumeroQuarto() {
         return numeroQuarto;
     }
 
-    public void setNumeroQuarto(int numeroQuarto) {
+    public void setNumeroQuarto(Integer numeroQuarto) {
         this.numeroQuarto = numeroQuarto;
     }
 
