@@ -118,6 +118,5 @@ public class Condominio implements Serializable {
     public void setRecursos(List<Recurso> recursos) {
         this.recursos = recursos;
     }
-    */
-
+     */
 }

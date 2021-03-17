@@ -40,8 +40,8 @@ public class Pessoa implements Serializable {
 
     @CPF(message = "O Cpf deve ser válido")
     @NotBlank(message = "O Cpf não pode ser em branco")
-    @Length(max = 14, message = "O Cpf não pode ter mais que {max} caracteres")
-    @Column(name = "cpf", nullable = false, length = 14)
+    @Length(max = 11, message = "O Cpf não pode ter mais que {max} caracteres")
+    @Column(name = "cpf", nullable = false, length = 11)
     private String cpf;
 
     @Length(max = 12, message = "O telefone não pode ter mais que {max} caracteres")

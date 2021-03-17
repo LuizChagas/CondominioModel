@@ -6,14 +6,11 @@
 package br.edu.ifsul.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -36,8 +33,7 @@ public class Recurso implements Serializable {
     /*
     @ManyToMany(mappedBy = "recursos")
     private List<Condominio> condominios;
-    */
-
+     */
     public Recurso() {
 
     }
@@ -66,6 +62,5 @@ public class Recurso implements Serializable {
     public void setCondominios(List<Condominio> condominios) {
         this.condominios = condominios;
     }
-    */
-
+     */
 }

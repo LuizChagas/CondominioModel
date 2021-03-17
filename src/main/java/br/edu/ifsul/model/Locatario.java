@@ -9,25 +9,26 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
 /**
  *
  * @author Pichau
  */
 @Entity
 @Table(name = "tb_locatario")
-public class Locatario extends Pessoa implements Serializable{
-    
+public class Locatario extends Pessoa implements Serializable {
+
     @Column(name = "renda", nullable = false)
     private double renda;
-    
+
     @Column(name = "local_trabalho")
     private String localTrabalho;
-    
+
     @Column(name = "telefone_trabalho")
     private String telefoneTrabalho;
-    
+
     public Locatario() {
-        
+
     }
 
     public double getRenda() {
@@ -53,5 +54,5 @@ public class Locatario extends Pessoa implements Serializable{
     public void setTelefoneTrabalho(String telefoneTrabalho) {
         this.telefoneTrabalho = telefoneTrabalho;
     }
-    
+
 }
