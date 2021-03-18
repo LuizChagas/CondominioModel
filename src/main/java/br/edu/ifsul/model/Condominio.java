@@ -15,6 +15,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -46,18 +49,19 @@ public class Condominio implements Serializable {
 
     @OneToMany(mappedBy = "condominio", cascade = CascadeType.ALL,
             orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<UnidadeCondominial> unidadesCondominiais = new ArrayList<>();
+    private List<UnidadeCondominial> unidadesCondominiais;
 
-    /*
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "tb_condominio_recurso",
             joinColumns
             = @JoinColumn(name = "condominio", referencedColumnName = "id",
                     nullable = false),
             inverseJoinColumns
-            = @JoinColumn(name = "recurso", referencedColumnName = "id", nullable = false))
+            = @JoinColumn(name = "recurso", referencedColumnName = "id",
+                    nullable = false)
+    )
     private List<Recurso> recursos;
-     */
+
     public Condominio() {
 
     }
