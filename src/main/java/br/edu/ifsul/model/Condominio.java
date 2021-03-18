@@ -7,7 +7,9 @@ package br.edu.ifsul.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,7 +62,7 @@ public class Condominio implements Serializable {
             = @JoinColumn(name = "recurso", referencedColumnName = "id",
                     nullable = false)
     )
-    private List<Recurso> recursos;
+    private Set<Recurso> recursos = new HashSet<>();
 
     public Condominio() {
 
@@ -114,13 +116,11 @@ public class Condominio implements Serializable {
         this.unidadesCondominiais = unidadesCondominiais;
     }
 
-    /*
-    public List<Recurso> getRecursos() {
+    public Set<Recurso> getRecursos() {
         return recursos;
     }
 
-    public void setRecursos(List<Recurso> recursos) {
+    public void setRecursos(Set<Recurso> recursos) {
         this.recursos = recursos;
     }
-     */
 }

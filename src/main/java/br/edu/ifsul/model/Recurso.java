@@ -30,10 +30,6 @@ public class Recurso implements Serializable {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    /*
-    @ManyToMany(mappedBy = "recursos")
-    private List<Condominio> condominios;
-     */
     public Recurso() {
 
     }
