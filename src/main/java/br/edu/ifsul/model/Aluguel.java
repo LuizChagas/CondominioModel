@@ -24,10 +24,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author Pichau
- */
 @Entity
 @Table(name = "tb_aluguel")
 public class Aluguel implements Serializable {

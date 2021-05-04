@@ -10,10 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-/**
- *
- * @author Pichau
- */
 @Entity
 @Table(name = "tb_locatario")
 public class Locatario extends Pessoa implements Serializable {

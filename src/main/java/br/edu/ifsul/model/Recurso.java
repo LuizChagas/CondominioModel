@@ -14,10 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-/**
- *
- * @author Pichau
- */
 @Entity
 @Table(name = "tb_recurso")
 public class Recurso implements Serializable {

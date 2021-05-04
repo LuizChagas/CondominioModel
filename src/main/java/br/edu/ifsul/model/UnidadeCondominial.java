@@ -17,10 +17,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author Pichau
- */
 @Entity
 @Table(name = "tb_unidade_condominial")
 public class UnidadeCondominial implements Serializable {
@@ -33,7 +29,7 @@ public class UnidadeCondominial implements Serializable {
     @Column(name = "numero", nullable = false)
     private String numero;
 
-    @Column(name = "descricao", nullable = false)
+    @Column(name = "descricao", nullable = false, columnDefinition = "text")
     private String descricao;
 
     @Column(name = "area", nullable = false)

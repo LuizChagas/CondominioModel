@@ -18,10 +18,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author Pichau
- */
 @Entity
 @Table(name = "tb_mensalidade")
 public class Mensalidade implements Serializable {
