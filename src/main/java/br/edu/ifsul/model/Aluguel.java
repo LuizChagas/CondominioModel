@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,6 +61,15 @@ public class Aluguel implements Serializable {
     @OneToMany(mappedBy = "aluguel", cascade = CascadeType.ALL,
             orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Mensalidade> mensalidades = new ArrayList<>();
+
+    public void adicionarMensalidade(Mensalidade obj) {
+        obj.setAluguel(this);
+        this.mensalidades.add(obj);
+    }
+
+    public void removerMensalidade(int index) {
+        this.mensalidades.remove(index);
+    }
 
     public Aluguel() {
 
@@ -127,6 +137,31 @@ public class Aluguel implements Serializable {
 
     public void setMensalidades(List<Mensalidade> mensalidades) {
         this.mensalidades = mensalidades;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Aluguel other = (Aluguel) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -63,6 +64,15 @@ public class Condominio implements Serializable {
 
     }
 
+    public void adicionarUnidadeCondominial(UnidadeCondominial obj) {
+        obj.setCondominio(this);
+        this.unidadesCondominiais.add(obj);
+    }
+
+    public void removerUnidadeCondominial(int index) {
+        this.unidadesCondominiais.remove(index);
+    }
+
     public Integer getId() {
         return id;
     }
@@ -117,5 +127,30 @@ public class Condominio implements Serializable {
 
     public void setRecursos(Set<Recurso> recursos) {
         this.recursos = recursos;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Condominio other = (Condominio) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 }
