@@ -47,7 +47,7 @@ public class Condominio implements Serializable {
 
     @OneToMany(mappedBy = "condominio", cascade = CascadeType.ALL,
             orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<UnidadeCondominial> unidadesCondominiais;
+    private List<UnidadeCondominial> unidadesCondominiais = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "tb_condominio_recurso",
